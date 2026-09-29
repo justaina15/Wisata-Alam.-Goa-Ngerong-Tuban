@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goa Ngerong Tuban - Ngerakit Cerita Bareng</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Inter:wght@300;400;600;700;800&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600;1,800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fern: '#337738',
+                        willow: '#AAD480',
+                        snow: '#FFFEFA',
+                        alice: '#0284C7',
+                        aliceLight: '#38BDF8',
+                        aliceGlow: '#00E5FF',
+                        darkFern: '#214f24',
+                        nightBg: '#1a3c1d'
+                    },
+                    fontFamily: {
+                        delrose: ['"Playfair Display"', 'serif'],
+                        grand: ['"Grand Hotel"', 'cursive'],
+                        lato: ['Lato', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'mag': '4px 4px 0px 0px rgba(0, 0, 0, 1)',
+                        'mag-sm': '3px 4px 4px 0px rgba(0, 0, 0, 1)',
+                        'mag-white': '3px 3px 0px 0px #FFFEFA',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #AAD480;
+            color: #FFFEFA;
+            font-family: 'Lato', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient-nature {
+            background: linear-gradient(180deg, #214f24 0%, #337738 40%, #AAD480 85%, #214f24 100%);
+        }
+
+        .font-heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-subheading {
+            font-family: 'Grand Hotel', cursive;
+        }
+
+        .font-decorative {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Magazine Border Style */
+        .mag-card {
+            border: 3px solid #000000;
+            background-color: #FFFEFA;
+            color: #111827;
+            box-shadow: 6px 6px 0px 0px #000000;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mag-card-dark {
+            border: 3px solid #000000;
+            background-color: #AAD480;
+            color: #FFFEFA;
+            box-shadow: 6px 6px 0px 0px #000000;
+            transition: all 0.3s ease;
+        }
+
+        .mag-card:hover,
+        .mag-card-dark:hover {
+            transform: translateY(-4px);
+            box-shadow: 10px 10px 0px 0px #000000;
+        }
+
+        .magazine-frame {
+            border: 4px solid #FFFEFA;
+            outline: 2px solid #000000;
+        }
+
+        /* Custom Bat Particle Animation */
+        .bat-flying {
+            position: absolute;
+            pointer-events: none;
+            z-index: 20;
+            animation: flyAcross 12s linear infinite;
+        }
+
+        @keyframes flyAcross {
+            0% {
+                transform: translate(-100px, 100px) scale(0.5);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            80% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translate(110vw, -200px) scale(0.9);
+                opacity: 0;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #214f24;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #AAD480;
+            border: 2px solid #000000;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="selection:bg-alice font-lato relative">
+
+    <div id="batContainer" class="fixed inset-0 pointer-events-none overflow-hidden z-10 opacity-40">
+        <!-- JS generated bat animations -->
+    </div>
+
+    <header
+        class="sticky top-0 z-50 bg-darkFern/95 backdrop-blur-md border-b-4 border-black text-snow px-4 lg:px-12 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div
+                    class="w-10 h-10 rounded-full bg-willow border-2 border-black flex items-center justify-center font-subheading text-darkFern text-2xl font-bold group-hover:rotate-12 transition-transform">
+                </div>
+                <div>
+                    <span class="font-heading font-black text-2xl tracking-tight block leading-none text-snow">GOA
+                        NGERONG</span>
+                    <span class="font-subheading text-willow text-lg leading-none block -mt-1">ngerakit cerita
+                        bareng</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav
+                class="hidden md:flex items-center gap-6 font-decorative text-sm font-semibold tracking-wider uppercase">
+                <a href="#destinasi"
+                    class="hover:text-willow transition-colors hover:underline underline-offset-4">Tentang</a>
+                <a href="#daya-tarik"
+                    class="hover:text-willow transition-colors hover:underline underline-offset-4">Daya Tarik</a>
+                <a href="#aktivitas"
+                    class="hover:text-willow transition-colors hover:underline underline-offset-4">Aktivitas</a>
+                <a href="#kuliner"
+                    class="hover:text-willow transition-colors hover:underline underline-offset-4">Kuliner & UMKM</a>
+                <a href="#info-wisata"
+                    class="hover:text-willow transition-colors hover:underline underline-offset-4">Informasi Wisata</a>
+                <a href="#galeri"
+                    class="hover:text-willow transition-colors hover:underline underline-offset-4">Galeri</a>
+            </nav>
+
+            <!-- Action Button & Audio Toggle -->
+            <div class="flex items-center gap-3">
+                <button id="soundToggleBtn" onclick="toggleNatureSound()"
+                    class="p-2.5 rounded-full bg-willow text-black border-2 border-black hover:bg-snow transition-all shadow-mag-sm active:translate-y-0.5"
+                    title="Putar Suara Alam">
+                    <i id="soundIcon" class="fa-solid fa-volume-xmark text-base"></i>
+                </button>
+                <a href="#info-wisata"
+                    class="hidden sm:inline-block bg-alice hover:bg-aliceLight text-snow font-decorative font-bold px-5 py-2.5 rounded-lg border-2 border-black shadow-mag text-sm uppercase tracking-wide hover:-translate-y-0.5 transition-all">
+                    Jelajahi Goa
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+<section id="hero" class="relative pt-8 pb-16 px-4 lg:px-12 bg-darkFern border-b-4 border-black overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+        <!-- Left Grid Column: Title, Tagline & Animated Pitch (Sketch Layout 1) -->
+<div class="lg:col-span-7 space-y-6 z-10 self-start">
+    <div
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-willow border-2 border-black text-black font-decorative font-bold text-xs uppercase tracking-widest">
+        <i class="fa-solid fa-gem text-emerald-800"></i> Wisata Alami & Magis Tuban
+    </div>
+
+    <h1
+        class="font-heading text-4xl sm:text-6xl xl:text-7xl font-black text-snow leading-none tracking-tight">
+        GOA NGERONG <br>
+        <span
+            class="font-subheading text-willow text-4xl sm:text-6xl font-normal block mt-2 transform -rotate-2">
+            ~ ngerakit cerita bareng ~
+        </span>
+    </h1>
+
+    <!-- Profile / Author & Pitch Card -->
+    <div class="mag-card p-6 rounded-2xl relative">
+        <div class="flex items-start gap-4">
+            <div
+                class="w-12 h-12 rounded-full bg-alice border-2 border-black flex-shrink-0 flex items-center justify-center text-white text-xl">
+                <i class="fa-solid fa-compass"></i>
+            </div>
+            <div>
+                <span
+                    class="font-decorative font-bold text-xs text-alice uppercase tracking-wider block">Brand
+                    Pitch & Welcome Note</span>
+                <p class="font-lato text-gray-800 text-base leading-relaxed mt-1 font-medium">
+                    "Selamat menjelajahi website kami! Kami telah menyediakan berbagai informasi dengan
+                    visual tertentu yang bisa kalian jadikan bahan untuk eksplorasi Goa Ngerong."
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Button Group -->
+    <div class="flex flex-wrap items-center gap-4 pt-2">
+        <a href="#daya-tarik"
+            class="bg-alice hover:bg-aliceLight text-snow font-decorative font-extrabold px-8 py-4 rounded-xl border-3 border-black shadow-mag text-base flex items-center gap-3 transition-transform hover:-translate-y-1">
+            <span>Eksplorasi Sekarang</span>
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#galeri"
+            class="bg-snow hover:bg-willow text-black font-decorative font-bold px-6 py-4 rounded-xl border-3 border-black shadow-mag text-base flex items-center gap-2 transition-transform hover:-translate-y-1">
+            <i class="fa-solid fa-images"></i> Galeri Foto
+        </a>
+    </div>
+</div>
+
+        <!-- Right Grid Column: Video Player Auto Play -->
+        <div class="lg:col-span-5 z-10">
+            <div class="relative group">
+                <div class="relative w-full overflow-hidden rounded-lg border-2 border-black shadow-mag">
+                    
+                    <!-- VIDEO UTAMA (AUTOPLAY) -->
+                    <video class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" 
+                           autoplay 
+                           muted 
+                           loop 
+                           playsinline 
+                           controls 
+                           preload="auto">
+                        <source src="VIDEO PROMOSI (1).mp4" type="video/mp4">
+                        Browser Anda tidak mendukung video HTML5.
+                    </video>
+
+                    <!-- OVERLAY GRADIENT -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
+
+                    <!-- BADGE -->
+                    <div class="absolute top-4 right-4 z-20 bg-willow border-2 border-black text-black px-3 py-1 rounded-full text-xs font-decorative font-bold">
+                        <i class="fa-solid fa-shield-cat"></i> Kelelawar & Ikan Suci
+                    </div> 
+
+                    <!-- TEXT OVERLAY -->
+                    <div class="absolute bottom-6 left-6 right-6 z-20 text-snow pointer-events-none">
+                        <span class="font-subheading text-willow text-2xl block">Destinasi Ikonik Rengel, Tuban</span>
+                        <h3 class="font-heading font-extrabold text-xl">Pesona Sungai Bawah Tanah & Ribuan Kelelawar</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <section id="destinasi" class="py-16 px-4 lg:px-12 bg-fern border-b-4 border-black">
+        <div class="max-w-7xl mx-auto space-y-12">
+
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="font-subheading text-willow text-3xl block">Sekilas Goa Ngerong</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-black text-snow tracking-tight">
+                    INFORMASI SINGKAT DESTINASI
+                </h2>
+                <div class="w-24 h-1.5 bg-willow mx-auto border-2 border-black rounded-full"></div>
+            </div>
+
+            <!-- Grid Layout (Sketch #2 Concept: Title + Tagline Header + Multi Info Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+
+                <!-- Main Overview Card (Large Grid item) -->
+                <div class="md:col-span-8 mag-card p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span
+                                class="bg-darkFern text-willow font-decorative text-xs font-bold px-3 py-1 rounded-lg border-2 border-black">
+                                KECAMATAN RENGEL
+                            </span>
+                            <span class="text-xs text-gray-500 font-bold uppercase tracking-wider">Kabupaten Tuban, Jawa
+                                Timur</span>
+                        </div>
+                        <h3 class="font-heading text-3xl font-extrabold text-gray-900 mb-4">
+                            Keajaiban Karst & Sungai Alami Berusia Ratusan Tahun
+                        </h3>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                            Goa Ngerong merupakan salah satu destinasi wisata alam legendaris di Tuban. Terletak tepat
+                            di kaki perbukitan kapur Rengel, goa ini menawarkan fenomena alam unik yang memadukan
+                            keindahan lorong perut bumi, habitat ribuan kelelawar, serta sungai air tawar jernih yang
+                            dipenuhi koloni ikan purba yang ramah.
+                        </p>
+                    </div>
+
+                    <!-- Inner Sub-grid for highlights -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t-2 border-gray-200">
+                        <div class="bg-willow/30 p-3 rounded-xl border-2 border-black text-center">
+                            <span class="font-heading text-2xl font-black text-darkFern block">500m+</span>
+                            <span class="text-xs font-semibold text-gray-800">Panjang Lorong</span>
+                        </div>
+                        <div class="bg-willow/30 p-3 rounded-xl border-2 border-black text-center">
+                            <span class="font-heading text-2xl font-black text-darkFern block">10.000+</span>
+                            <span class="text-xs font-semibold text-gray-800">Kelelawar</span>
+                        </div>
+                        <div
+                            class="bg-willow/30 p-3 rounded-xl border-2 border-black text-center col-span-2 sm:col-span-1">
+                            <span class="font-heading text-2xl font-black text-darkFern block">24/7</span>
+                            <span class="text-xs font-semibold text-gray-800">Mata Air Mengalir</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side Magazine Visual Card -->
+                <div
+                    class="md:col-span-4 mag-card-dark p-6 rounded-3xl flex flex-col justify-between relative overflow-hidden">
+                    <img src="Ngerong.jpeg" alt="Suasana Goa Ngerong"
+                        class="w-full h-48 object-cover rounded-xl border-2 border-black mb-4"
+                        onerror="this.src='https://placehold.co/600x400/337738/FFFEFA?text=Goa+Ngerong'">
+
+                    <span class="font-subheading text-willow text-3xl">"Simfoni Alam & Misteri"</span>
+                    <p class="text-black/90 text-sm mt-2 leading-relaxed">
+                        Pengunjung dapat menikmati sejuknya gemericik air bawah tanah sambil memberi makan ribuan ikan
+                        yang siap mengerumuni tepi kolam.
+                    </p>
+
+                    <div
+                        class="mt-6 pt-4 border-t border-willow/30 flex justify-between items-center text-xs font-decorative">
+                        <span class="text-willow font-bold"><i class="fa-solid fa-map-pin"></i> Rengel, Tuban</span>
+                        <span class="text-black/70">Akses Jalan Ringan</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="daya-tarik" class="py-16 px-4 lg:px-12 bg-willow/20 border-b-4 border-black">
+        <div class="max-w-7xl mx-auto space-y-12">
+
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="font-subheading text-darkFern text-3xl block">Keunikan Utama</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-black text-snow tracking-tight">
+                    DAYA TARIK GOA NGERONG
+                </h2>
+                <p class="text-snow/90 text-base">Dua pesona alam magis yang menjadi daya pikat pengunjung dari seluruh
+                    Indonesia.</p>
+            </div>
+
+            <!-- Two Main Focus Cards: Bats & Fish River -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- Focus 1: Ribuan Kelelawar -->
+                <div class="mag-card p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div
+                            class="w-14 h-14 bg-darkFern text-willow rounded-2xl border-2 border-black flex items-center justify-center text-2xl shadow-mag-sm">
+                            <i class="fa-solid fa-vihara"></i>
+                        </div>
+                        <span
+                            class="bg-black text-willow font-decorative font-bold text-xs uppercase px-3 py-1 rounded-full">
+                            Fenomena Senja
+                        </span>
+                    </div>
+
+                    <div class="mb-6">
+                        <h3 class="font-heading text-3xl font-black text-gray-900 mb-3">
+                            Ribuan Kelelawar Penghuni Mulut Goa
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed font-medium">
+                            Atap goa menjadi rumah alami bagi jutaan kelelawar (*Chiroptrophis*). Saat menjelang sore
+                            hari (*sore senja*), Anda dapat menyaksikan pemandangan menakjubkan sewaktu kawanan
+                            kelelawar terbang keluar secara bergelombang membentuk gugusan di angkasa.
+                        </p>
+                    </div>
+
+                    <div class="rounded-2xl border-2 border-black overflow-hidden h-56 relative mb-4">
+                        <img src="image 2.jpeg" alt="Kelelawar Goa Ngerong"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/800x500/214f24/FFFEFA?text=Ribuan+Kelelawar'">
+                        <div
+                            class="absolute bottom-3 left-3 bg-black/80 text-snow text-xs px-3 py-1 rounded-lg border border-snow">
+                            <i class="fa-solid fa-clock text-willow"></i> Waktu Terbaik: 16:30 - 17:30 WIB
+                        </div>
+                    </div>
+
+                    <ul class="space-y-2 text-sm text-gray-800 font-semibold">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-darkFern"></i> Suara dengung kelelawar alami yang menggema
+                            di area kapur.
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-darkFern"></i> Atraksi visual alam liar tanpa dipungut
+                            biaya tambahan.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Focus 2: Sendang & Berbagai Jenis Ikan -->
+                <div class="mag-card p-8 rounded-3xl relative overflow-hidden group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div
+                            class="w-14 h-14 bg-alice text-snow rounded-2xl border-2 border-black flex items-center justify-center text-2xl shadow-mag-sm">
+                            <i class="fa-solid fa-fish"></i>
+                        </div>
+                        <span
+                            class="bg-alice text-snow font-decorative font-bold text-xs uppercase px-3 py-1 rounded-full border border-black">
+                            Ikan Keramat / Suci
+                        </span>
+                    </div>
+
+                    <div class="mb-6">
+                        <h3 class="font-heading text-3xl font-black text-gray-900 mb-3">
+                            Sendang Air Jernih & Koloni Berbagai Jenis Ikan
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed font-medium">
+                            Di aliran air bening yang keluar langsung dari mulut goa, hidup ribuan ikan liar seperti
+                            ikan Bader, Tawes, dan Kerapu Kali. Ikan-ikan ini sangat jinak dan berkumpul mendekati
+                            pengunjung yang memberi makan di tepi sendang.
+                        </p>
+                    </div>
+
+                    <div class="rounded-2xl border-2 border-black overflow-hidden h-56 relative mb-4">
+                        <img src="image 3.jpg" alt="Ikan Sendang Goa Ngerong"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.src='https://placehold.co/800x500/0284C7/FFFEFA?text=Sendang+Ikan+Gua+Ngerong'">
+                        <div
+                            class="absolute bottom-3 left-3 bg-alice text-snow text-xs px-3 py-1 rounded-lg border border-black font-bold">
+                            <i class="fa-solid fa-heart text-red-300"></i> Ramah Anak & Wisata Keluarga
+                        </div>
+                    </div>
+
+                    <ul class="space-y-2 text-sm text-gray-800 font-semibold">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-alice"></i> Nikmati pengalaman memberi pakan pelet & roti
+                            langsung ke mulut ikan.
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-alice"></i> Kejernihan air alami berasal dari mata air
+                            pegunungan kapur Tuban.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="aktivitas" class="py-16 px-4 lg:px-12 bg-darkFern border-b-4 border-black">
+        <div class="max-w-7xl mx-auto space-y-12">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <span class="font-subheading text-willow text-3xl block">Eksplorasi Seru</span>
+                    <h2 class="font-heading text-4xl sm:text-5xl font-black text-snow tracking-tight">
+                        AKTIVITAS PENGUNJUNG
+                    </h2>
+                </div>
+                <p class="text-snow/80 max-w-md text-sm">
+                    Ragam kegiatan seru dan berkesan yang bisa kamu lakukan saat berkunjung ke Goa Ngerong Rengel Tuban.
+                </p>
+            </div>
+
+            <!-- Grid of 4 Interactive Activity Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Activity 1 -->
+                <div
+                    class="mag-card p-6 rounded-2xl flex flex-col justify-between hover:border-alice transition-colors">
+                    <div>
+                        <div
+                            class="w-12 h-12 bg-willow border-2 border-black rounded-xl flex items-center justify-center text-darkFern font-bold text-xl mb-4">
+                            01
+                        </div>
+                        <h4 class="font-heading font-black text-xl text-gray-900 mb-2">Memberi Makan Ikan</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Beli pakan ikan lokal di sekitar area dan rasakan sensasi ribuan ikan menyambar pakan di
+                            permukaan air bening.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200 text-xs font-bold text-alice">
+                        <i class="fa-solid fa-utensils"></i> Favorit Anak-Anak
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div
+                    class="mag-card p-6 rounded-2xl flex flex-col justify-between hover:border-alice transition-colors">
+                    <div>
+                        <div
+                            class="w-12 h-12 bg-willow border-2 border-black rounded-xl flex items-center justify-center text-darkFern font-bold text-xl mb-4">
+                            02
+                        </div>
+                        <h4 class="font-heading font-black text-xl text-gray-900 mb-2">Menyusuri Mulut Goa</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Jelajahi area bebatuan stalaktit di sekitar pintu masuk gua dan rasakan kesejukan embun air
+                            pegunungan.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200 text-xs font-bold text-emerald-600">
+                        <i class="fa-solid fa-mountain"></i> Jelajah Karst
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div
+                    class="mag-card p-6 rounded-2xl flex flex-col justify-between hover:border-alice transition-colors">
+                    <div>
+                        <div
+                            class="w-12 h-12 bg-willow border-2 border-black rounded-xl flex items-center justify-center text-darkFern font-bold text-xl mb-4">
+                            03
+                        </div>
+                        <h4 class="font-heading font-black text-xl text-gray-900 mb-2">Fotografi Estetik</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Abadikan momen unik dengan pemandangan alami tebing kapur, jembatan kayu, dan lanskap
+                            sendang.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200 text-xs font-bold text-purple-600">
+                        <i class="fa-solid fa-camera"></i> Spot Instagramable
+                    </div>
+                </div>
+
+                <!-- Activity 4 -->
+                <div
+                    class="mag-card p-6 rounded-2xl flex flex-col justify-between hover:border-alice transition-colors">
+                    <div>
+                        <div
+                            class="w-12 h-12 bg-willow border-2 border-black rounded-xl flex items-center justify-center text-darkFern font-bold text-xl mb-4">
+                            04
+                        </div>
+                        <h4 class="font-heading font-black text-xl text-gray-900 mb-2">Santai Tepi Sendang</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Duduk di gazebo peneduh diiringi pepohonan rimbun dan suasana pedesaan Rengel yang asri.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200 text-xs font-bold text-amber-600">
+                        <i class="fa-solid fa-mug-hot"></i> Relaksasi & Healing
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="kuliner" class="py-16 px-4 lg:px-12 bg-fern border-b-4 border-black">
+        <div class="max-w-7xl mx-auto space-y-12">
+
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="font-subheading text-willow text-3xl block">Cita Rasa & Souvenir Lokal</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-black text-snow tracking-tight">
+                    KULINER & UMKM REJEKI RENGEL
+                </h2>
+                <p class="text-snow/80 text-sm">Dukung ekonomi warga lokal dengan menikmati sajian khas dan cinderamata.
+                </p>
+            </div>
+
+            <!-- Magazine Layout for Kuliner -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Food Item 1 -->
+                <div class="mag-card p-6 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 rounded-2xl border-2 border-black overflow-hidden mb-4 relative">
+                            <img src="image 7.jpg" alt="Kuliner khas Nasi Becek" class="w-full h-full object-cover"
+                                onerror="this.src='https://placehold.co/600x400/214f24/FFFEFA?text=Nasi+Becek+Tuban'">
+                            <span
+                                class="absolute top-3 left-3 bg-willow border border-black text-black font-extrabold text-xs px-2.5 py-1 rounded-md">
+                                Kuliner Khas
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-black text-gray-900 mb-2">Nasi Becek Khas Tuban</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            Hidangan gulai kambing rempah kaya rasa dengan paduan rasa gurih pedas khas pesisir Tuban
+                            yang menggugah selera.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-4 pt-3 border-t border-gray-200 flex justify-between items-center text-xs font-bold text-gray-700">
+                        <span><i class="fa-solid fa-tag text-emerald-700"></i> Rp 15.000 - Rp 25.000</span>
+                        <span class="text-emerald-800">Warung Sekitar Goa</span>
+                    </div>
+                </div>
+
+                <!-- Food Item 2 -->
+                <div class="mag-card p-6 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 rounded-2xl border-2 border-black overflow-hidden mb-4 relative">
+                            <img src="image 6.jpg" alt="Es Legen & Siwalan" class="w-full h-full object-cover"
+                                onerror="this.src='https://placehold.co/600x400/0284C7/FFFEFA?text=Es+Legen+Siwalan'">
+                            <span
+                                class="absolute top-3 left-3 bg-alice text-snow border border-black font-extrabold text-xs px-2.5 py-1 rounded-md">
+                                Minuman Segar
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-black text-gray-900 mb-2">Es Legen & Buah Siwalan</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            Minuman alami penyegar dahaga dari nira pohon siwalan Rengel yang manis dan menyegarkan saat
+                            cuaca terik.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-4 pt-3 border-t border-gray-200 flex justify-between items-center text-xs font-bold text-gray-700">
+                        <span><i class="fa-solid fa-tag text-alice"></i> Rp 5.000 - Rp 10.000</span>
+                        <span class="text-alice font-bold">Pondok Legen Sehat</span>
+                    </div>
+                </div>
+
+                <!-- UMKM Item 3 -->
+                <div class="mag-card p-6 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 rounded-2xl border-2 border-black overflow-hidden mb-4 relative">
+                            <img src="image 5.jpeg" alt="Pakan Ikan & Souvenir" class="w-full h-full object-cover"
+                                onerror="this.src='https://placehold.co/600x400/AAD480/000000?text=Pakan+Ikan+amp+Oleh-Oleh'">
+                            <span
+                                class="absolute top-3 left-3 bg-black text-willow font-extrabold text-xs px-2.5 py-1 rounded-md">
+                                Lapak UMKM
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-black text-gray-900 mb-2">Pakan Ikan & Cinderamata</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            Gantungkan cerita wisatamuu dengan membeli pakan pelet ikan, kerajinan tangan lokal, serta
+                            kaus cinderamata Goa Ngerong.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-4 pt-3 border-t border-gray-200 flex justify-between items-center text-xs font-bold text-gray-700">
+                        <span><i class="fa-solid fa-tag text-amber-600"></i> Mulai Rp 2.000</span>
+                        <span class="text-amber-700">Kios Warga Lokal</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="info-wisata" class="py-16 px-4 lg:px-12 bg-willow/10 border-b-4 border-black">
+        <div class="max-w-7xl mx-auto space-y-12">
+
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="font-subheading text-willow text-3xl block">Panduan Kunjungan</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-black text-snow tracking-tight">
+                    INFORMASI WISATA & FAKTA
+                </h2>
+                <p class="text-snow/80 text-sm">Informasi praktis untuk merencanakan liburanmu ke Goa Ngerong.</p>
+            </div>
+
+            <!-- Grid Boxes with Magazine Framing -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+                <!-- Ticket Box -->
+                <div class="md:col-span-4 mag-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="text-xs font-decorative font-extrabold uppercase bg-alice text-snow px-3 py-1 rounded-full border border-black">
+                                Harga Tiket Masuk
+                            </span>
+                            <i class="fa-solid fa-ticket text-alice text-2xl"></i>
+                        </div>
+                        <div class="space-y-3 my-4">
+                            <div class="flex justify-between items-center pb-2 border-b border-gray-200">
+                                <span class="font-bold text-gray-800">Tiket Dewasa</span>
+                                <span class="font-heading font-black text-2xl text-darkFern">Rp 10.000</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-2 border-b border-gray-200">
+                                <span class="font-bold text-gray-800">Tiket Anak-Anak</span>
+                                <span class="font-heading font-black text-2xl text-darkFern">Rp 5.000</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs text-gray-500">
+                                <span>* Parkir Sepeda Motor</span>
+                                <span class="font-bold text-gray-700">Rp 3.000</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs text-gray-500">
+                                <span>* Parkir Mobil</span>
+                                <span class="font-bold text-gray-700">Rp 10.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 p-3 rounded-xl border border-gray-300 text-xs text-gray-600">
+                        <i class="fa-solid fa-circle-info text-alice"></i> *Harga dapat berubah saat hari libur
+                        nasional.
+                    </div>
+                </div>
+
+                <!-- Operating Hours & Location -->
+                <div class="md:col-span-4 mag-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="text-xs font-decorative font-extrabold uppercase bg-darkFern text-willow px-3 py-1 rounded-full border border-black">
+                                Jam Operasional
+                            </span>
+                            <i class="fa-solid fa-clock text-darkFern text-2xl"></i>
+                        </div>
+
+                        <div class="space-y-4 my-2">
+                            <div>
+                                <span class="text-xs text-gray-500 font-bold block uppercase">Buka Setiap Hari</span>
+                                <span class="font-heading font-black text-3xl text-gray-900 block">08.00 - 17.00
+                                    WIB</span>
+                            </div>
+                            <div class="p-3 bg-willow/30 rounded-xl border border-black/20 text-xs text-gray-800">
+                                <strong>Tips Kunjungan:</strong> Datang pukul 15.30 WIB untuk menikmati suasana memberi
+                                makan ikan sekaligus menunggu fenomena kelelawar terbang keluar goa di waktu sore.
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Goa+Ngerong+Rengel+Tuban" target="_blank"
+                        class="w-full bg-darkFern hover:bg-black text-willow font-decorative font-bold py-3 rounded-xl border-2 border-black text-center text-sm flex items-center justify-center gap-2 transition-colors">
+                        <i class="fa-solid fa-location-dot"></i> Buka Google Maps
+                    </a>
+                </div>
+
+                <!-- Facilities & Regulations -->
+                <div class="md:col-span-4 mag-card p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span
+                                class="text-xs font-decorative font-extrabold uppercase bg-black text-willow px-3 py-1 rounded-full">
+                                Fasilitas & Aturan
+                            </span>
+                            <i class="fa-solid fa-list-check text-black text-2xl"></i>
+                        </div>
+
+                        <div class="space-y-2 text-xs font-semibold text-gray-800">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-square-check text-darkFern"></i> Area Parkir Luas & Rindang
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-square-check text-darkFern"></i> Musholla & Toilet Bersih
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-square-check text-darkFern"></i> Gazebo & Bangku Istirahat
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-square-check text-darkFern"></i> Deretan Warung Makan & ES Legen
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-3 border-t border-gray-200">
+                            <span class="text-xs font-bold text-red-600 block mb-1 uppercase">Peraturan
+                                Pengunjung:</span>
+                            <p class="text-xs text-gray-600">
+                                ⛔ Dilarang memancing / menangkap ikan di area sendang goa! Jagalah kebersihan dengan
+                                membuang sampah pada tempatnya.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-xs text-center font-bold text-gray-500">
+                        #NgerakitCeritaBareng Goa Ngerong
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri" class="py-16 px-4 lg:px-12 bg-darkFern border-b-4 border-black">
+        <div class="max-w-7xl mx-auto space-y-10">
+
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="font-subheading text-willow text-3xl block">Dokumentasi Visual</span>
+                <h2 class="font-heading text-4xl sm:text-5xl font-black text-snow tracking-tight">
+                    GALERI FOTO GOA NGERONG
+                </h2>
+                <p class="text-snow/80 text-sm">Kumpulan foto keindahan dan sudut-sudut eksotis kawasan goa.</p>
+            </div>
+
+            <!-- Gallery Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 font-decorative text-xs font-bold">
+                <button onclick="filterGallery('all')"
+                    class="gal-btn active px-5 py-2.5 rounded-full bg-willow text-black border-2 border-black shadow-mag-sm hover:bg-snow transition-all">
+                    Semua Foto
+                </button>
+                <button onclick="filterGallery('goa')"
+                    class="gal-btn px-5 py-2.5 rounded-full bg-darkFern text-snow border-2 border-black hover:bg-willow hover:text-black transition-all">
+                    Goa & Kelelawar
+                </button>
+                <button onclick="filterGallery('ikan')"
+                    class="gal-btn px-5 py-2.5 rounded-full bg-darkFern text-snow border-2 border-black hover:bg-willow hover:text-black transition-all">
+                    Sendang & Ikan
+                </button>
+                <button onclick="filterGallery('suasana')"
+                    class="gal-btn px-5 py-2.5 rounded-full bg-darkFern text-snow border-2 border-black hover:bg-willow hover:text-black transition-all">
+                    Suasana Wisata
+                </button>
+            </div>
+
+            <!-- Gallery Grid Showcase -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+                <!-- Item 1 -->
+                <div class="gal-item goa magazine-frame rounded-2xl overflow-hidden aspect-video relative group cursor-pointer"
+                    onclick="openLightbox('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop', 'Mulut Goa Ngerong & Lorong Karst')">
+                    <img src="image 2.jpeg" alt="Mulut Goa Ngerong"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        onerror="this.src='https://placehold.co/600x400/214f24/FFFEFA?text=Mulut+Goa'">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-snow font-bold text-sm"><i class="fa-solid fa-magnifying-glass-plus"></i>
+                            Mulut Goa Ngerong</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="gal-item ikan magazine-frame rounded-2xl overflow-hidden aspect-video relative group cursor-pointer"
+                    onclick="openLightbox('https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?q=80&w=1200&auto=format&fit=crop', 'Koloni Ikan Jinak Sendang Ngerong')">
+                    <img src="image 1.jpeg" alt="Ikan Sendang"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        onerror="this.src='https://placehold.co/600x400/0284C7/FFFEFA?text=Ikan+Sendang'">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-snow font-bold text-sm"><i class="fa-solid fa-magnifying-glass-plus"></i>
+                            Koloni Ikan Jinak Sendang</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="gal-item goa magazine-frame rounded-2xl overflow-hidden aspect-video relative group cursor-pointer"
+                    onclick="openLightbox('https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1200&auto=format&fit=crop', 'Ribuan Kelelawar Terbang Saat Senja')">
+                    <img src="image 8 kele.webp" alt="Kelelawar Senja"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        onerror="this.src='https://placehold.co/600x400/111827/FFFEFA?text=Kelelawar+Senja'">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-snow font-bold text-sm"><i class="fa-solid fa-magnifying-glass-plus"></i>
+                            Kelelawar Terbang Saat Senja</span>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="gal-item suasana magazine-frame rounded-2xl overflow-hidden aspect-video relative group cursor-pointer"
+                    onclick="openLightbox('https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop', 'Jembatan & Area Kunjungan Wisatawan')">
+                    <img src="gua ngerong.jpg" alt="Suasana Area Goa"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        onerror="this.src='https://placehold.co/600x400/AAD480/000000?text=Suasana+Wisata'">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-snow font-bold text-sm"><i class="fa-solid fa-magnifying-glass-plus"></i>
+                            Jembatan & Area Kunjungan</span>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="gal-item ikan magazine-frame rounded-2xl overflow-hidden aspect-video relative group cursor-pointer"
+                    onclick="openLightbox('https://images.unsplash.com/photo-1535591273668-578e31182c4f?q=80&w=1200&auto=format&fit=crop', 'Aktivitas Memberi Makan Ikan')">
+                    <img src="image 3.jpg" alt="Memberi makan ikan"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        onerror="this.src='https://placehold.co/600x400/0284C7/FFFEFA?text=Memberi+Makan+Ikan'">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-snow font-bold text-sm"><i class="fa-solid fa-magnifying-glass-plus"></i>
+                            Memberi Makan Ikan</span>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="gal-item suasana magazine-frame rounded-2xl overflow-hidden aspect-video relative group cursor-pointer"
+                    onclick="openLightbox('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop', 'Pemandangan Asri Perbukitan Rengel Tuban')">
+                    <img src="gua ngerong pohon.jpg" alt="Lanskap Rengel"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        onerror="this.src='https://placehold.co/600x400/337738/FFFEFA?text=Lanskap+Rengel'">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-snow font-bold text-sm"><i class="fa-solid fa-magnifying-glass-plus"></i>
+                            Lanskap Alam Rengel</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-snow py-12 px-4 lg:px-12 border-t-4 border-willow">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+
+            <div>
+                <span class="font-heading font-black text-2xl text-willow block">GOA NGERONG TUBAN</span>
+                <span class="font-subheading text-snow text-xl block -mt-1">ngerakit cerita bareng</span>
+                <p class="text-xs text-gray-400 mt-2 max-w-sm">
+                    Destinasi wisata alam edukatif dan legendaris di Kecamatan Rengel, Kabupaten Tuban, Jawa Timur.
+                </p>
+            </div>
+
+            <!-- Footer Metadata reference styled like Reference Layout Image #2 -->
+            <div
+                class="flex flex-wrap items-center gap-6 font-decorative text-xs font-bold text-gray-400 uppercase tracking-widest text-center md:text-right">
+                <div>
+                    <span class="block text-willow">EDITED PIXELLAB</span>
+                    <span>SUPPORT BY PINTEREST</span>
+                </div>
+                <div>
+                    <span class="block text-willow">created by AMD.TF</span>
+                    <span>GOA NGERONG BRANDING</span>
+                </div>
+                <div>
+                    <span class="block text-willow">REFERENCE FROM</span>
+                    <span>TYPOGRAPHY & GRID</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
+            &copy; 2026 Goa Ngerong Tuban. All Rights Reserved. Crafted with passion for tourism.
+        </div>
+    </footer>
+
+    <div id="videoModal" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
+        <div class="mag-card-dark p-6 rounded-3xl max-w-3xl w-full relative">
+            <button onclick="closeVideoModal()"
+                class="absolute -top-4 -right-4 w-10 h-10 bg-willow text-black font-extrabold rounded-full border-2 border-black flex items-center justify-center text-xl hover:bg-snow transition-colors">
+                &times;
+            </button>
+            <h3 class="font-heading text-2xl font-black text-willow mb-4">Video Eksplorasi Goa Ngerong</h3>
+            <div
+                class="aspect-video bg-black rounded-xl overflow-hidden border-2 border-black relative flex items-center justify-center">
+                <!-- Video placeholder presentation -->
+                <div class="text-center p-6 space-y-3">
+                    <i class="fa-solid fa-circle-play text-willow text-6xl animate-pulse"></i>
+                    <p class="font-heading text-xl text-snow">Eksplorasi Video Goa Ngerong & Ribuan Ikan</p>
+                    <p class="text-xs text-gray-400">Putar dokumentasi keindahan alam Goa Ngerong Tuban</p>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-between items-center text-xs text-gray-300">
+                <span><i class="fa-solid fa-location-pin text-willow"></i> Rengel, Tuban</span>
+                <button onclick="closeVideoModal()" class="bg-willow text-black px-4 py-2 rounded-lg font-bold">Tutup
+                    Modal</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="lightboxModal" class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-4"
+        onclick="closeLightbox()">
+        <div class="max-w-4xl w-full relative" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()"
+                class="absolute -top-12 right-0 text-snow text-3xl hover:text-willow font-bold">
+                <i class="fa-solid fa-xmark"></i> Tutup
+            </button>
+            <div class="magazine-frame rounded-2xl overflow-hidden bg-black">
+                <img id="lightboxImg" src="" alt="Detail Foto" class="w-full max-h-[80vh] object-contain mx-auto">
+                <div
+                    class="p-4 bg-darkFern text-snow font-heading text-lg font-bold border-t-2 border-black flex justify-between items-center">
+                    <span id="lightboxCaption">Detail Foto Goa Ngerong</span>
+                    <span class="text-xs font-decorative text-willow">Goa Ngerong Gallery</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. Interactive Bat Particles Generator
+        function generateBatParticles() {
+            const container = document.getElementById('batContainer');
+            if (!container) return;
+
+            const batSvg = `<svg class="w-8 h-8 text-black fill-current" viewBox="0 0 24 24"><path d="M12 4.5C10.5 2 7 1 4 3c-1.5 1-2.5 3-2 5 .5 2 2 4 4 4.5C3 13 1 15.5 2 18c1 2.5 4 3.5 7 2.5 1.5-.5 2.5-1.5 3-2.5.5 1 1.5 2 3 2.5 3 1 6 0 7-2.5 1-2.5-1-5-4-5.5 2-.5 3.5-2.5 4-4.5.5-2-.5-4-2-5-3-2-6.5-1-8 1.5z"/></svg>`;
+
+            for (let i = 0; i < 6; i++) {
+                const bat = document.createElement('div');
+                bat.className = 'bat-flying';
+                bat.innerHTML = batSvg;
+                bat.style.top = Math.random() * 80 + '%';
+                bat.style.animationDelay = (i * 2.2) + 's';
+                bat.style.animationDuration = (8 + Math.random() * 6) + 's';
+                container.appendChild(bat);
+            }
+        }
+
+        // 2. Nature Audio Sound Synthesizer (Web Audio API - No external file needed!)
+        let audioCtx = null;
+        let isPlaying = false;
+        let noiseNode = null;
+
+        function toggleNatureSound() {
+            const soundBtn = document.getElementById('soundToggleBtn');
+            const soundIcon = document.getElementById('soundIcon');
+
+            if (!isPlaying) {
+                try {
+                    const AudioContext = window.AudioContext || window.webkitAudioContext;
+                    audioCtx = new AudioContext();
+
+                    // Create ambient water river stream synthesis
+                    const bufferSize = audioCtx.sampleRate * 2;
+                    const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                    const output = noiseBuffer.getChannelData(0);
+
+                    for (let i = 0; i < bufferSize; i++) {
+                        output[i] = Math.random() * 2 - 1;
+                    }
+
+                    const whiteNoise = audioCtx.createBufferSource();
+                    whiteNoise.buffer = noiseBuffer;
+                    whiteNoise.loop = true;
+
+                    const filter = audioCtx.createBiquadFilter();
+                    filter.type = 'bandpass';
+                    filter.frequency.value = 400;
+                    filter.Q.value = 3.0;
+
+                    const gain = audioCtx.createGain();
+                    gain.gain.value = 0.08;
+
+                    whiteNoise.connect(filter);
+                    filter.connect(gain);
+                    gain.connect(audioCtx.destination);
+
+                    whiteNoise.start();
+                    noiseNode = whiteNoise;
+
+                    isPlaying = true;
+                    soundBtn.classList.remove('bg-willow');
+                    soundBtn.classList.add('bg-alice', 'text-white');
+                    soundIcon.className = "fa-solid fa-volume-high text-base";
+                } catch (e) {
+                    console.log('Audio init prevented or not supported', e);
+                }
+            } else {
+                if (audioCtx) {
+                    audioCtx.close();
+                }
+                isPlaying = false;
+                soundBtn.classList.remove('bg-alice', 'text-white');
+                soundBtn.classList.add('bg-willow', 'text-black');
+                soundIcon.className = "fa-solid fa-volume-xmark text-base";
+            }
+        }
+
+        // 3. Video Modal Logic
+        function openVideoModal() {
+            const modal = document.getElementById('videoModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // 4. Lightbox Modal Logic
+        function openLightbox(imgSrc, caption) {
+            const lightbox = document.getElementById('lightboxModal');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+
+            lightboxImg.src = imgSrc;
+            lightboxCaption.textContent = caption;
+
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightboxModal');
+            lightbox.classList.remove('flex');
+            lightbox.classList.add('hidden');
+        }
+
+        // 5. Gallery Filter Logic
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gal-item');
+            const buttons = document.querySelectorAll('.gal-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-willow', 'text-black', 'active');
+                btn.classList.add('bg-darkFern', 'text-snow');
+            });
+
+            event.currentTarget.classList.remove('bg-darkFern', 'text-snow');
+            event.currentTarget.classList.add('bg-willow', 'text-black', 'active');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Window Init
+        window.onload = function () {
+            generateBatParticles();
+        };
+    </script>
+</body>
+
+</html>
